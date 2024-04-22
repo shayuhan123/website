@@ -1,0 +1,48 @@
+<script>
+let x=[];
+x[0]=1;
+x[x.length]=2;
+x.push(2323);
+document.write("x="+x+"<br>");
+let y=x.pop();
+x[0]=44;
+document.write("x.length="+x.length+"<br>");
+document.write("x="+x+"<br>");
+let z=x.shift();//remove x[0]
+document.write("x="+x+"<br>");
+let j=x.indexOf(2);
+document.write("j="+j+"<br>");
+let k=x.indexOf(3);
+document.write("k="+k+"<br>");
+let m=x.indexOf(2,1);
+document.write("m="+m+"<br>");
+//x.splice(start,num2delete,newelement1,newelement2,...);
+x.splice(1,0,3,4,6,7,8,2,3);
+document.write("x.length="+x.length+"<br>");
+document.write("x="+x+"<br>");
+x.splice(2,3);
+document.write("x.length="+x.length+"<br>");
+document.write("x="+x+"<br>");
+x.splice(0,0,3,5,6);
+document.write("x="+x+"<br>");
+for(let y in x)
+{
+	document.write(y +":"+x[y]+";");
+}
+document.write("<br>");
+for(y=0;y<x.length;y++)
+{
+	document.write(y+":"+x[y]+";");
+	
+}
+x.sort();
+document.write("<br>");
+for(let y of x)
+{
+	document.write(y+";");
+}
+
+
+
+
+</script>
