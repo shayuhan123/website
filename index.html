@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>汉诺塔动画演示及手动练习</title>
+	<style>
+		*{margin:0;padding:0;}
+		h1{margin:25px 0;font-size: 50px;color: rgb(255, 208, 0);text-shadow: 3px 2px 0px #fff;}
+		body
+		{
+		width:100%;height:100%; background-image: url(background.png); 
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-attachment:fixed;
+		}
+		#content{text-align:center;font-weight: 800;color: rgb(0, 117, 252);font-size:20px;text-shadow: 1px 1px 0px #fff;}
+		#control{line-height:30px;margin:5px;}
+		#log{width:80%;text-align:center;margin:0 auto;}
+		#view{width:70%;height:500px;background-color: rgb(225, 248, 252);margin:2% auto;vertical-align: bottom;}
+		#view,#txtlog,#detaillog,.dizuo,.block{border:1px solid rgb(0, 0, 0);position: relative;}
+		.dizuo{position: absolute;width:20%;height:20px;background-color:gray;top:480px;color:white;font-size: 15px;}
+		.shugun{position: absolute;height:480px;width:4px;background-color:black;}
+		.button 
+		{
+		background-color: rgb(0, 183, 255); /* Green */
+		border: 0.5px solid rgb(0, 60, 255);
+		color: rgb(255, 0, 98);
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 20px;
+		margin:10px;
+		border-radius: 8px;
+		font-weight: 800;
+		text-shadow: 1px 1px 0px #fff;
+		}
+		.sg1{left:19.5%;}/*差9.5%*/
+		.sg2{left:49.5%;}
+		.sg3{left:79.5%;}
+		.dz1{left:10%;}
+		.dz2{left:40%;}
+		.dz3{left:70%;}
+		#block{position:absolute;}
+		.block{position:absolute;background-color:#0084ff;z-index:9999;}
+		.log{width:30%;float:left;text-align:left;margin:0 4px;}
+		</style>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+
+</head>
+<body>
+			
+	<div id="content">
+			
+		<div id="control">
+			<h1 >汉诺塔动画演示及手动练习</h1>
+			<label for="num">盘子数量:</label>
+			<input style="background:rgb(225, 248, 252);height: 20px" type="text" id="num" value="4" />
+		</div>
+		<div id="control">
+			<label for="speed">动画速度:</label>
+			<input  style="background:rgb(225, 248, 252);height: 20px;" type="text" id="speed" value="500" />
+		</div>
+	
+		
+		<div id="control">
+			<label for="color1">盘子颜色:</label>
+			<input style="background:rgb(225, 248, 252);height: 20px "type="text" id="color1" value="#0084ff" />
+		</div>
+		<div id="control">
+			<label for="color2">竖棒颜色:</label>
+			<input style="background:rgb(225, 248, 252);height: 20px" type="text" id="color2" value="black" />
+		</div>
+		<div id="control">
+			<label for="color3">底座颜色:</label>
+			<input style="background:rgb(225, 248, 252);height: 20px"  type="text" id="color3" value="gray" />
+		</div>
+	
+		<div id="control">
+			<input class="button"   type="button" value="初始化" id="init" />
+			<input class="button"  type="button" value="动画开始" id="start" />
+		</div>
+		
+		<div id="view">
+			<div id="block">
+				<!-- 这里存放各种块 -->
+			</div>
+			<div id="sg1" class="shugun sg1"></div>
+			<div id="sg2" class="shugun sg2"></div>
+			<div id="sg3" class="shugun sg3"></div>
+			<div id="dizuo1" class="dizuo dz1">A</div>
+			<div id="dizuo2" class="dizuo dz2">B</div>
+			<div id="dizuo3" class="dizuo dz3">C</div>			
+		</div>
+		<div>
+		</div>
+		<div>
+		<input class="button" type="button" value="A--->B" id="A_B" />
+		<input class="button" type="button" value="B--->C" id="B_C" />
+		<input class="button" type="button" value="A--->C" id="A_C" />
+		</div>
+		<div></div>
+		<div>
+		<input class="button" type="button" value="B--->A" id="B_A" />
+		<input class="button" type="button" value="C--->B" id="C_B" />
+		<input class="button" type="button" value="C--->A" id="C_A" />
+		</div>
+		<div id="log">
+			<div style="clear:both;">
+				<textarea style="font-weight: 800;background-color:  rgb(225, 248, 252);" name="txtlog" id="txtlog" cols="30%" rows="7%" ></textarea>
+				<textarea style="font-weight: 800;background-color:  rgb(225, 248, 252);" name="detaillog" id="detaillog" cols="50%" rows="7%" value="动画显示"></textarea>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
